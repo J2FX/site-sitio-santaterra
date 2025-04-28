@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sítio Santa Terra – Agrofloresta e Carinho</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sítio Santa Terra – Agricultura familiar agroflorestal, educação, produção local e regeneração em Patrocínio Paulista-SP.">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&family=Lora:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde-mata: #567d46;
+      --marrom-terra: #a98468;
+      --amarelo-flor: #f9cc67;
+      --laranja-flor: #faad64;
+      --claro: #f9f8f6;
+      --cinza: #455353;
+      --sombra: 0 2px 16px #0002;
+    }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--claro);
+      color: var(--cinza);
+      margin: 0; padding: 0;
+      line-height: 1.6;
+      min-height: 100vh;
+      letter-spacing: 0.01em;
+    }
+    header {
+      background: linear-gradient(100deg, var(--verde-mata), var(--marrom-terra) 90%);
+      color: white;
+      padding: 2rem 1.5rem 1rem 1.5rem;
+      text-align: center;
+      box-shadow: var(--sombra);
+    }
+    .logo-flor {
+      max-width: 60px;
+      margin-bottom: 0.5rem;
+      filter: drop-shadow(0 0 6px #456d469e);
+      transition: transform .25s;
+    }
+    nav {
+      margin: 0 auto;
+      padding: .8rem 0;
+      background: #fff7e9e8;
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      top: 0; z-index: 99;
+      box-shadow: 0 1px 7px #0001;
+      border-radius: 0 0 1rem 1rem;
+      font-size: 1.04rem;
+    }
+    nav a {
+      color: var(--verde-mata);
+      margin: 0 1.4rem;
+      text-decoration: none;
+      font-weight: 700;
+      border-bottom: 2px solid transparent;
+      padding-bottom: .2em;
+      transition: border-bottom .2s;
+    }
+    nav a:hover, nav .active {
+      border-bottom: 2px solid var(--amarelo-flor);
+    }
+    section {
+      max-width: 1020px;
+      margin: 2.6rem auto 2rem auto;
+      padding: 0 1.5rem;
+      background: white;
+      border-radius: 1.2rem;
+      box-shadow: var(--sombra);
+    }
+    h1, h2, h3 {
+      font-family: 'Lora', serif;
+      margin-top: 1.2em;
+      color: var(--verde-mata);
+    }
+    h1 {
+      font-size: 2.2rem;
+      letter-spacing: .02em;
+    }
+    h2 {
+      font-size: 1.5rem;
+      color: var(--laranja-flor);
+      margin-top: 1.4em;
+      letter-spacing: .02em;
+    }
+    .hero-img {
+      width: 96%;
+      max-width: 780px;
+      border-radius: 1.5rem;
+      box-shadow: 0 4px 24px #39363612;
+      margin: 1rem auto 2rem auto;
+      display: block;
+    }
+    .time-line {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2em 0;
+      margin: 1.5rem 0 2.2rem 0;
+      border-left: 4px solid var(--marrom-terra);
+      padding-left: 2.2rem;
+      font-size: 1.09em;
+    }
+    .time-event {
+      position: relative;
+      margin-bottom: .5em;
+    }
+    .time-event::before {
+      content: '';
+      position: absolute;
+      left: -2.95rem;
+      top: 6px;
+      width: 1.1em; height: 1.1em;
+      background: var(--amarelo-flor);
+      border-radius: 50%;
+      border: 2px solid #eedb93;
+    }
+    .team-photo {
+      width: 105px; height: 105px; border-radius: 50%;
+      object-fit: cover;
+      margin: .5em 1em 0 0;
+      display: inline-block;
+      border: 2.2px solid #EBD49A;
+      box-shadow: 0 2px 13px #0002;
+      background: #eee;
+      vertical-align: middle;
+    }
+    .team-block {
+      display: flex; align-items: flex-start;
+      gap: 2.5rem; flex-wrap: wrap;
+      margin: 1.8em 0 1em 0;
+    }
+    .team-info {
+      flex: 1 1 320px;
+    }
+    .gallery {
+      display: grid;
+      gap: 1.7rem 1.6rem;
+      grid-template-columns: repeat(auto-fit,minmax(280px, 1fr));
+      margin: 2em 0 1.4em 0;
+    }
+    .gallery-item {
+      border-radius: 1.3rem;
+      overflow: hidden;
+      background: #faf6edc2;
+      box-shadow: 0 2px 10px #dfb97317;
+      display: flex;
+      flex-direction: column;
+    }
+    .gallery-item img {
+      width: 100%; height: 190px; object-fit: cover;
+      border-bottom: 1.4px solid #efe4ca;
+      background: #eee;
+      transition: filter .2s;
+    }
+    .gallery-item:hover img {
+      filter: brightness(1.08) saturate(1.1);
+    }
+    .gallery-item small {
+      padding: .7em 1.2em;
+      display: block;
+      color: var(--cinza);
+      font-size: 1em;
+    }
+    .divider {
+      width: 100px;
+      border: 2px dashed var(--verde-mata);
+      margin: 2.4em auto 2.2em auto;
+      opacity: .3;
+    }
+    footer {
+      margin-top: 4rem;
+      background: linear-gradient(100deg, var(--verde-mata), var(--marrom-terra) 80%);
+      color: #fffcee;
+      text-align: center;
+      padding: 2.3rem 1rem .6rem 1rem;
+      border-radius: 1.6rem 1.6rem 0 0;
+      font-size: 1em;
+      box-shadow: var(--sombra);
+    }
+    /* Mobile */
+    @media (max-width: 700px) {
+      header { padding: 1.2em .5em .5em .5em; }
+      nav a { margin: 0 .4em; font-size: 95%; }
+      section { padding: .8rem .5rem; }
+      .hero-img { max-width: 99vw; }
+      .team-block { flex-direction: column; align-items: center; }
+      .team-photo { margin: 0 0 .8em 0; }
+      .team-info { text-align: center; min-width: 0; }
+    }
+    /* Nature or floral decorative waves */
+    .nature-shape {
+      width: 100%;
+      height: 52px;
+      display: block;
+      background: linear-gradient(-100deg, #faad6440 50%, #ffffff00 100%);
+      margin: 0; padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img class="logo-flor" src="https://static.vecteezy.com/system/resources/previews/023/969/646/original/minimalist-nature-leaf-logo-png.png" alt="Flor Natureza Sítio Santa Terra"/>
+    <h1>Sítio Santa Terra</h1>
+    <p style="font-size:1.1em;margin:.7em auto .3em auto;max-width:570px;">
+      Agricultura familiar agroflorestal, natureza, regeneração e carinho em Patrocínio Paulista – SP.
+    </p>
+  </header>
+  <nav>
+    <a href="#historia" class="active">História</a>
+    <a href="#familia">Família</a>
+    <a href="#agrofloresta">Agrofloresta</a>
+    <a href="#produtos">Produtos</a>
+    <a href="#educacao">Educação</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  
+  <div class="nature-shape"></div>
+  
+  <!-- Hero Section: imagem de impacto inicial -->
+  <section>
+    <img src="https://scontent-gru2-2.cdninstagram.com/v/t51.2885-15/136153198_116696387028513_3363969241920256269_n.jpg?stp=dst-jpg_e35&_nc_ht=scontent-gru2-2.cdninstagram.com&_nc_cat=109&_nc_ohy=1&_nc_sid=8ae9d6&edm=AP_V10EAAAAA&ccb=7-5&oh=00_AfAT_2DZpzJUekjNQ6h8fEWNGdCx2_kbTLKF7QWpe8z64A&oe=663A6CD3&_nc_ad=z-m" alt="Vista agroflorestal do Sítio Santa Terra" class="hero-img"/>
+    <!-- Troque o link acima por outro post preferido após testar o carregamento direto. -->
+  </section>
+  
+  <section id="historia">
+    <h2>História & Linha do Tempo</h2>
+    <p>
+      O Sítio Santa Terra floresceu a partir do sonho de viver de forma simples, conectada à natureza e sustentável. <strong>Anderson, Angélica e o pequeno João</strong> são a família que cultiva, regenera, educa e acolhe, transformando cada ciclo de plantio em uma celebração da vida, da infância e do futuro.
+    </p>
+    <div class="time-line">
+      <div class="time-event"><strong>2016-2017:</strong> O sonho ganha forma: escolha do sítio, início do manejo agroecológico e primeiros plantios em consórcio.</div>
+      <div class="time-event"><strong>2018:</strong> Primeira colheita agroflorestal, recuperação do solo, preparação de canteiros biodiversos, novas árvores e raízes plantadas.</div>
+      <div class="time-event"><strong>2019:</strong> Chegada do João! Com ele, a presença de uma infância junto à floresta, ao lado dos mutirões, colheitas e aprendizados familiares. Início da venda direta para comunidade e participação em feiras.</div>
+      <div class="time-event"><strong>2020-2021:</strong> Crescimento dos sistemas – café, mudas, sementes, parcerias com escolas, oficinas e experimentações agroecológicas.</div>
+      <div class="time-event"><strong>2022:</strong> Educação ambiental ganha destaque: mutirões, visitas escolares, parcerias com SESC Franca, vídeos e vivências educativas. João mergulha cada vez mais na rotina do sítio, aprendendo e brincando na natureza.</div>
+      <div class="time-event"><strong>2023-2024:</strong> Consolidação como referência comunitária em agrofloresta, educação e saúde alimentar regenerativa. Novas conexões, voluntários e inspirações!</div>
+    </div>
+  </section>
+
+  <section id="familia">
+    <h2>Família & Equipe</h2>
+    <div class="team-block">
+      <img src="https://www.instagram.com/p/DITZ2qpRKo5/media/?size=m" alt="Anderson – Agricultor agroflorestal" class="team-photo"/>
+      <div class="team-info">
+        <strong>Anderson</strong><br/>
+        Agricultor agroflorestal, pesquisador de agroecologia, responsável pelo manejo, plantio, mutirões e orientação técnica do campo.<br/><br/>
+        <strong>Angélica</strong><br/>
+        Agricultora e comunicadora, acolhe visitantes, realiza colheitas, coordena as vendas, oficinas e educação ambiental.<br/><br/>
+        <strong>João</strong><br/>
+        Vivência agroflorestal na infância: acompanha e aprende a cada ciclo, brinca, planta, colhe e nos inspira a ver o mundo com olhos de criança.<br/><br/>
+        <span style="opacity:.7">Contamos também com o apoio de voluntários, vizinhos, escolas parceiras e uma linda rede colaborativa!</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="agrofloresta">
+    <h2>Nossa Agrofloresta</h2>
+    <p>
+      Os sistemas Agroflorestais do Santa Terra são agroecológicos e inspirados pelo próprio funcionamento da natureza. Alimentos e florestas crescem juntos: árvores, frutas, raízes, ervas e café convivem em harmonia, gerando matéria orgânica, protegendo o solo e tornando tudo mais sustentável.<br/>
+      Essa diversidade garante colheitas saudáveis e alimentos mais saborosos, livres de adubos químicos ou venenos.<br/><br/>
+      <blockquote style="border-left:3px solid var(--amarelo-flor);background:#f9f7ea88;padding:.8em 1.2em;font-style:italic;">
+        “Plantamos floresta, colhemos alimento e cuidamos da água, produzindo a biodiversidade que alimenta a nossa comunidade.”
+      </blockquote>
+    </p>
+  </section>
+
+  <section id="produtos">
+    <h2>Produtos & Loja</h2>
+    <ul>
+      <li>Hortaliças, raízes, tubérculos, frutas regionais</li>
+      <li>Café agroflorestal</li>
+      <li>Mudas, sementes e compotas naturais</li>
+      <li>Ovos de galinhas criadas livres</li>
+      <li>Produtos frescos entregues via <a href="https://www.fazafeira.com/sitiosantaterra"  rel="noopener">FazaFeira</a> e em feiras regionais</li>
+    </ul>
+    <p>
+      <a href="https://www.fazafeira.com/sitiosantaterra"  style="display:inline-block;background:var(--verde-mata);color:white;padding:.7em 1.6em;border-radius:.7em;text-decoration:none;font-weight:700;box-shadow:0 2px 12px #323f1814;">Comprar agora na FazaFeira</a>
+    </p>
+  </section>
+
+  <section id="educacao">
+    <h2>Educação & Projetos</h2>
+    <ul>
+      <li>Oficinas para escolas municipais, estaduais e particulares</li>
+      <li>Mutirões agroflorestais, trilhas educativas e vivências para famílias e grupos</li>
+      <li>Parcerias com SESC Franca e projetos de educação ambiental</li>
+      <li>Voluntariado e experiências de conexão campo-cidade</li>
+    </ul>
+    <p>
+      <a href="https://www.instagram.com/sitiosantaterra/"  rel="noopener">Veja mais em nosso Instagram</a> para datas, testemunhos e registros das oficinas e mutirões.
+    </p>
+  </section>
+
+  <section id="galeria">
+    <h2>Galeria</h2>
+    <div class="gallery">
+      <div class="gallery-item">
+        <a href="https://www.instagram.com/p/DITZ2qpRKo5/?img_index=1" >
+        <img src="https://scontent-gru2-2.cdninstagram.com/v/t51.2885-15/136153185_116696387028513_3363969241920256269_n.jpg?stp=dst-jpg_e35&_nc_ht=scontent-gru2-2.cdninstagram.com&_nc_cat=109&_nc_ohy=1&_nc_sid=8ae9d6&edm=AP_V10EAAAAA&ccb=7-5&oh=00_AfBQKM5KkibkRmP8ClHEHstcEdrMtNvSiJlYj7TOOblfA&oe=663A5DBD&_nc_ad=z-m" alt="Agrofloresta em cooperação"/></a>
+        <small>Agrofloresta em consórcio: diversidade e harmonia entre árvores, raízes, frutas e hortaliças.</small>
+      </div>
+      <div class="gallery-item">
+        <a href="https://www.instagram.com/p/DICAWMNxWAk/?img_index=1" >
+          <img src="https://scontent.cdninstagram.com/v/t51.2885-15/12624372_1142699585781352_1694102130_n.jpg?stp=dst-jpg_e35&..." alt="Cultivo diverso agroflorestal"/></a>
+        <small>Diversidade agroflorestal: diferentes variedades, fortalecimento do solo e abundância natural.</small>
+      </div>
+      <div class="gallery-item">
+        <a href="https://www.instagram.com/p/DEDyCDFv3Ry/?img_index=1" >
+          <img src="https://scontent-gru2-2.cdninstagram.com/v/t51.2885-15/17934430_170255246999153_8199490184322166784_n.jpg?stp=dst-jpg_e35&_nc_ht=scontent-gru2-2.cdninstagram.com&_nc_cat=109&_nc_ohc=QtXQfJ6oz5kAX_eyifm&edm=AP_V10EAAAAA&ccb=7-5&oh=00_AfAKhkS-vhORjFDRmrhvLkYmTTiz8b6fGtFr1QJqvEcopw&oe=663A8CA2&_nc_ad=z-m" alt="Infância agroflorestal"/></a>
+        <small>João e a infância agroflorestal: brincar, plantar e crescer junto à floresta.</small>
+      </div>
+      <div class="gallery-item">
+        <a href="https://www.instagram.com/p/DC-QGj1P1Q4/" >
+        <img src="https://scontent-gru2-2.cdninstagram.com/v/t51.2885-15/13450292_1753236014938796_2130770125_n.jpg?stp=dst-jpg_e35&_nc_ht=scontent-gru2-2.cdninstagram.com&_nc_cat=111&_nc_ohc=d0N3_MOpdUgAX8zkTwA&edm=AP_V10EAAAAA&ccb=7-5&oh=00_AfAZkgmznPpyIeYbB50nm9HZXlnW3lRzNg5NoAR4KB6PdA&oe=663A6EAA&_nc_ad=z-m" alt="Plantando floresta"/>
+        </a>
+        <small>Plantando floresta: regeneração ambiental e cuidado com cada ciclo do solo e da água.</small>
+      </div>
+      <div class="gallery-item">
+        <a href="<div className="video-container mb-3"><iframe width="100%" height="315" src="https://www.youtube.com/embed/xUXw7MzKvcM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>" >
+          <img src="https://img.youtube.com/vi/xUXw7MzKvcM/maxresdefault.jpg" alt="Vídeo: Rotina de colheita agroflorestal no Sítio Santa Terra"/></a>
+        <small>Vídeo: rotina de manejo, colheita e cuidado agroflorestal diário.</small>
+      </div>
+      <div class="gallery-item">
+        <a href="https://www.instagram.com/p/Cr60opCu81E/" >
+          <img src="https://scontent-gru2-2.cdninstagram.com/v/t51.2885-15/344067700_927773385084594_1598668455338846834_n.jpg?stp=dst-jpg_e15&_nc_ht=scontent-gru2-2.cdninstagram.com&_nc_cat=107&_nc_ohc=_hGkZr30ZqQAX8X8wNQ&edm=AP_V10EAAAAA&ccb=7-5&oh=00_AfA0Q-UbWqlB8jDSUh4J2lm1unbKRDwTVpoWIE8CghwVRw&oe=663A7D25&_nc_ad=z-m" alt="Vivências escolares agroflorestais"/>
+        </a>
+        <small>Vivência e educação: grupos escolares experimentam a agrofloresta de perto.</small>
+      </div>
+    </div>
+  </section>
+  
+  <section id="faq">
+    <h2>Perguntas Frequentes (FAQ)</h2>
+    <strong>O que é agrofloresta?</strong><br>
+    Agrofloresta é um sistema de cultivo que une produção de alimentos e restauração ambiental: plantios consorciados de árvores, hortaliças, raízes e frutas, criando ecossistemas sustentáveis como na natureza.<br><br>
+    <strong>Vocês usam agrotóxicos ou químicos?</strong><br>
+    Não. Toda produção é livre de venenos. Fertilidade vem da matéria orgânica, adubação natural, manejo de biomassa e cobertura do solo.<br><br>
+    <strong>Como compro os produtos?</strong><br>
+    Diretamente pela <a href="https://www.fazafeira.com/sitiosantaterra" >FazaFeira</a> ou em feiras locais. Também oferecemos cestas periódicas por encomenda.<br><br>
+    <strong>Posso visitar o sítio?</strong><br>
+    Sim! Recebemos escolas, famílias, voluntários e grupos – entre em contato por mensagens ou Instagram para agendar.<br><br>
+    <strong>Como participo de mutirões?</strong><br>
+    As datas são divulgadas em nossas redes. Mande mensagem para saber mais!
+  </section>
+  <section id="contato">
+    <h2>Fale conosco / Visite</h2>
+    <p>
+      <b>Endereço:</b> Patrocínio Paulista, SP<br/>
+      <b>WhatsApp:</b> [Envie mensagem](https://wa.me/5516999999999) <!-- Substitua pelo real se autorizado -->
+      <br/>
+      <b>Instagram:</b> <a href="https://www.instagram.com/sitiosantaterra/" >@sitiosantaterra</a><br/>
+      <b>E-mail:</b> <a href="mailto:contato@sitiosantaterra.com.br">contato@sitiosantaterra.com.br</a><br/>
+    </p>
+    <p>
+      Venha conhecer, plantar, aprender e crescer conosco. Sítio Santa Terra: plantando sonhos, colhendo futuro!
+    </p>
+  </section>
+
+  <footer>
+    <div>© Sítio Santa Terra – Patrocínio Paulista – SP</div>
+    <div>Site feito com carinho para celebrar a agrofloresta, a agricultura familiar e a alegria de viver em harmonia com a terra.</div>
+    <div>
+      <a href="https://www.instagram.com/sitiosantaterra/"  style="color:#fbe6b0;font-weight:700">Instagram</a> |
+      <a href="https://www.youtube.com/@sitiosantaterra"  style="color:#fbe6b0;font-weight:700">YouTube</a> |
+      <a href="https://www.fazafeira.com/sitiosantaterra"  style="color:#fbe6b0;font-weight:700">FazaFeira</a>
+    </div>
+  </footer>
+
+</body>
+</html>
